@@ -1,6 +1,17 @@
 - name: Home
   link: /
-- name: Portfolio
-  link: /portfolio/
-- name: About Me
-  link: /about/
+- name: Research
+  link: /research/
+- name: Group
+  link: /group/
+  subpages:
+    - name: People
+      link: /people/
+    - name: Vacancies
+      link: /vacancies/
+    - name: Robots
+      link: /robots/
+- name: Publications
+  link: /publications/
+- name: Education
+  link: /education/

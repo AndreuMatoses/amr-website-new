@@ -10,9 +10,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         {% for item in site.data.navigation %}
+        {% if item.subpages %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ forloop.index }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ item.name }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
+              {% for subpage in item.subpages %}
+              <li><a class="dropdown-item" href="{{ subpage.link | relative_url }}">{{ subpage.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
           <li class="nav-item">
             <a href="{{ item.link | relative_url }}" {% if page.url == item.link %} class="nav-link active" {% else %} class="nav-link" {% endif %}>{{ item.name }}</a>
           </li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>
