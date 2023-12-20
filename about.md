@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Landing page
 permalink: /about/
 ---
 
