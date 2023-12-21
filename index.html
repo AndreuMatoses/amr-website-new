@@ -2,4 +2,98 @@
 layout: default
 ---
 
-<h1>hello how are you</h1>
+<!-- <div class="row main-logo justify-content-center">
+    <div class="col-lg-6">
+    <img src="/assets/images/aml_logo_color.png" class="d-block img-fluid" alt="amr logo">
+    </div>
+</div> -->
+
+<div class="row flex-lg-row align-items-center g-4 py-3">
+    <div class="col-lg-5">
+        <!-- <img src="/assets/images/aml_logo_color.png" class="d-block mx-lg-auto img-fluid mb-3" alt="amr logo" loading="lazy"> -->
+        <img src="/assets/images/cover_pic_4x3.JPG" class="d-block mx-lg-auto img-fluid" alt="amr logo" loading="lazy">
+    </div>
+    <div class="col-lg-7">
+        <div class="mt-0">
+            <p>
+                We are the <b class="amr-color">Autonomus Multi-Robots Lab <i class="bi bi-robot"></i> </b>!
+            </p>
+            <p>
+                Our main research interests are in navigation, motion planning, learning and control of autonomous
+                mobile
+                robots, and teams thereof, that interact with other robots and humans in dynamic and uncertain
+                environments.
+            </p>
+            <p>
+                We contribute novel methods and solutions in the areas of motion planning, dynamic vehicle routing,
+                multi-robot coordination, multi-robot learning, task assignment, automated cinematography, formation
+                control, collision avoidance and human-swarm interaction.
+                Building towards the smart cities of the future, we apply these techniques in various fields, including
+                autonomous cars, automated factories, aerial vehicles and intelligent transportation systems with
+                ride-sharing.
+            </p>
+            <p>
+                You can also read more about some of our research in this <a
+                    href="https://www.tudelft.nl/en/stories/articles/obstacles-no-problem-for-smart-robots">TU Delft
+                    story</a>.
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="div highlights mt-4">
+    {% assign youtube_entry = site.data.socials | where: 'name', "Youtube" | last %}
+    <div class="row flex-lg-row align-items-center g-4 py-3">
+        <div class="col-lg-4">
+            <h1>Research</h1>
+            <p>
+                Our group's research is applied mainly to the following fields:
+            </p>
+            <p class="amr-color">
+                - Autonomous Vehicles
+                <br>- Flying Robots
+                <br>- Mobile Manipulation
+                <br>- Social Robots
+                <br>- On-demand Transportation
+                <br>- Entertainment Robots
+            </p>
+
+            <p>
+                Check our Youtube Playlist to see the latest videos of demos and papers!. You can also go directly to the <a
+                    href="{{ youtube_entry.url }}">Youtube Channel</a>.
+            </p>
+            <div class="d-grid gap-2 d-flex justify-content-md-start justify-content-center">
+                <a href="{{ youtube_entry.url }}"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Youtube</button></a>
+                <a href="{{ '/research' | relative_url }}"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2">All Research</button></a>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/?listType=playlist&list=PLOksz-MTFhN2T4gYQlLHR2lGCdC0BDkJw"
+                    title="AMR playlist" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+<div class="div news mt-4">
+    <h1>Latest News</h1>
+
+    <div class="row">
+        <div class="col">
+            <ul class="timeline">
+                {% assign news = site.news | sort: 'date' | reverse %}
+                {% for new in news limit:10%}
+                <li>
+                    <a href="{{ new.url }}">{{ new.title }}</a>
+                    <span class="text-body-secondary"> | {{ new.date | date: "%d %b %Y" }}</span>
+                    {{ new.content }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    Check all the news <a href="{{ '/news' | relative_url }}">here</a>.
+</div>

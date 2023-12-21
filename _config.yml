@@ -38,6 +38,9 @@ collections:
   people:
     output: false
     permalink: /:collection/:name
+  news:
+    output: false
+    permalink: /:collection/:name
 
 # defaults
 defaults:
