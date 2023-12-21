@@ -7,37 +7,42 @@ permalink: /people/
 
 <h2>Professors</h2>
 
-{% for person in people_sorted %}
-{% if person.type == "professor" and person.is_past_member == false %}
-<div class="row p-3 mb-3 justify-content-center border-top border-bottom">
-    <div class="col-lg-4 align-self-center">
-        <img src="{{ person.image }}" class="img-fluid mb-2" style="object-fit: contain;" alt="{{ person.title }}">
-    </div>
-    <div class="col-lg-8 align-self-center">
-        <h3> {{ person.name }} </h3>
-        <div class="div">
-            {{ person.content }}
+<div class="div professors pt-2 pb-3">
+    {% for person in people_sorted %}
+    {% if person.type == "professor" and person.left_date == null %}
+    <!-- <div class="row p-3 mb-3 justify-content-center border-top border-bottom">
+        <div class="col-lg-4 align-self-center">
+            <img src="{{ person.image }}" class="img-fluid mb-2" style="object-fit: contain;" alt="{{ person.title }}">
         </div>
-        {% if person.links %}
-        <div class="d-inline-flex gap-2">
-            {% for link in person.links %}
-            <a href="{{ link.url }}" target="_blank" class="btn btn-sm btn-outline-dark">{{ link.name }}</a>
-            {% endfor %}
+        <div class="col-lg-8 align-self-center">
+            <h3> {{ person.name }} </h3>
+            <div class="div">
+                {{ person.content }}
+            </div>
+            {% if person.links %}
+            <div class="d-inline-flex gap-2">
+                {% for link in person.links %}
+                <a href="{{ link.url }}" target="_blank" class="btn btn-sm btn-light">{{ link.name }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
+    </div> -->
+    {% include person_vcard.html person=person %}
+
+    {% endif %}
+    {% endfor %}
 </div>
-{% endif %}
-{% endfor %}
+
 
 <h2>Post-Docs</h2>
 
 <div class="post-docs pt-2 pb-3">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for person in people_sorted %}
-        {% if person.type == "post-doc" and person.is_past_member == false %}
+        {% if person.type == "post-doc" and person.left_date == null %}
         <div class="col">
-                {% include person_vcard.html person=person %}
+            {% include person_vcard.html person=person %}
         </div>
         {% endif %}
         {% endfor %}
@@ -49,9 +54,9 @@ permalink: /people/
 <div class="phd-students pt-2 pb-3">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for person in people_sorted %}
-        {% if person.type == "phd-candidate" and person.is_past_member == false %}
+        {% if person.type == "phd-candidate" and person.left_date == null %}
         <div class="col">
-                {% include person_vcard.html person=person %}
+            {% include person_vcard.html person=person %}
         </div>
         {% endif %}
         {% endfor %}
@@ -63,13 +68,53 @@ permalink: /people/
 <div class="engineers pt-2 pb-3">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for person in people_sorted %}
-        {% if person.type == "engineer" and person.is_past_member == false %}
+        {% if person.type == "engineer" and person.left_date == null %}
         <div class="col">
-                {% include person_vcard.html person=person %}
+            {% include person_vcard.html person=person %}
         </div>
         {% endif %}
         {% endfor %}
     </div>
 </div>
 
+
+{% assign people_sorted_by_leave = site.people | sort: 'left_date' | reverse %}
+
 <h1>Past Members</h1>
+
+<div class="div past-members pt-2">
+    {% for person in people_sorted_by_leave %}
+    {% if person.type != "phd-visitor" and person.type != "engineer" and person.left_date %}
+    <div class="mb-3">
+        {% include past_person_line.html person=person %}
+    </div>
+
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h3>Past Visitors</h3>
+
+<div class="div past-visitors pt-2">
+    {% for person in people_sorted_by_leave %}
+    {% if person.type == "phd-visitor" and person.left_date %}
+    <div class="mb-3">
+        {% include past_person_line.html person=person %}
+    </div>
+
+    {% endif %}
+    {% endfor %}
+</div>
+
+<h3>Past Research Assistants</h3>
+
+<div class="div past-engineers pt-2">
+    {% for person in people_sorted_by_leave %}
+    {% if person.type == "engineer" and person.left_date %}
+    <div class="mb-3">
+        {% include past_person_line.html person=person %}
+    </div>
+
+    {% endif %}
+    {% endfor %}
+</div>
