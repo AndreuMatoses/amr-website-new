@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Landing page
 permalink: /about/
 ---
