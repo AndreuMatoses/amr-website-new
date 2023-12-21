@@ -15,7 +15,6 @@ source "https://rubygems.org"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 gem "webrick", "~> 1.8"
-gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
