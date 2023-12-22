@@ -87,7 +87,8 @@ layout: default
                 {% assign news = site.news | sort: 'date' | reverse %}
                 {% for new in news limit:10%}
                 <li>
-                    <a href="{{ new.url }}">{{ new.title }}</a>
+                    <!-- <a href="{{ new.url }}">{{ new.title }}</a> -->
+                    <span class="amr-color" >{{ new.title }}</span>
                     <span class="text-body-secondary"> | {{ new.date | date: "%d %b %Y" }}</span>
                     {{ new.content }}
                 </li>

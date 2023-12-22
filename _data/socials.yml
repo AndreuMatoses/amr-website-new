@@ -10,7 +10,5 @@
 - name: Contact
   url: /
   icon: bi bi-envelope
-- name: Cognitive Robotics
-  url: https://www.tudelft.nl/en/3me/departments/cognitive-robotics-cor/
 - name: Robotics Institute
   url: https://tudelftroboticsinstitute.nl/
