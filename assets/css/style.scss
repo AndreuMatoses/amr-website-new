@@ -49,3 +49,13 @@ ul.timeline > li:before {
     height: 20px;
     z-index: 400;
 }
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #D107A9;
+  }
+  
+::selection {
+    color: white;
+    background: #D107A9;
+  }
