@@ -20,7 +20,7 @@ layout: default
         <h3 class="mb-1 mt-2 mt-md-0 fs-5 fw-semibold">People</h3>
         {% for person in page.people %}
           <span>{{ person.name }} 
-            {% if person.extra_info %} | <span class="text-body-secondary">{{ person.extra_info }}</span> {% endif %}
+            {% if person.extra_info %} - <span class="text-body-secondary small">{{ person.extra_info }}</span> {% endif %}
           </span> <br>
         {% endfor %}
         {% endif %}
