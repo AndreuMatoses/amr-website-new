@@ -3,7 +3,9 @@ layout: default
 ---
 
 <div class="page">
+  {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
   {% if page.subtitle %}
   <span class="fs-4 text-muted">{{ page.subtitle }}</span>
   {% endif %}
