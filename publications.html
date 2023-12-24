@@ -1,0 +1,87 @@
+---
+title: Publications
+permalink: /publications/
+---
+
+<!-- We loop over the entries in the data/publications file and display the publications -->
+<div class="row justify-content-">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search publications: author, title, ..." id="search-input">
+        <button class="btn btn-primary" type="button" id="search-button"><i class="bi bi-search"></i></button>
+    </div>
+</div>
+
+<div class="publication-container" id="publication-container">
+
+    {% assign publications_sorted = site.data.publications | sort: 'year' | reverse %}
+    {% for publication in publications_sorted %}
+
+    {% assign currDate = publication.date | date: "%Y" %} 
+    {% if currDate != date %}
+    <h3 class="archive-year border-bottom">{{ currDate }}</h3>
+    {% assign date = currDate %} 
+    {% endif %}
+    <div class="publication-item">
+        <p>
+            <span class="fw-bold publication-title">{{ publication.title }}</span>
+            <br>
+            <span class="author-names">
+                {% for author in publication.authors %}
+                {% if forloop.last %}
+                {{ author }}.
+                {% else %}
+                {{ author }},
+                {% endif %}
+                {% endfor %}
+            </span>
+            <span class="text-body-secondary publication-venue"> In {{ publication.venue }}, </span>
+            <span class="text-body-secondary publication-date">{{ publication.date | date: "%Y" }}.</span>
+            {% if publication.links %}
+            <div class="d-flex justify-content-start mt-0 gap-2">
+            {% for link_hash in publication.links %}
+            {% for link in link_hash %}
+            <a href="{{ link[1] }}" target="_blank" class="btn btn-sm btn-light">{{ link[0] }}</a>
+            {% endfor %}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </p>
+    </div>
+    {% endfor %}
+
+</div>
+
+<div class="patents">
+    <h1>Patents</h1>
+    <ul class="patents-list">
+        <li>(P07) Compact omnidirectional vision sensor, US patent, 2014, led.</li>
+        <li>(P06) Shared control of autonomous vehicles, US patent, 2014, led.</li>
+        <li>(P05) Automated charging for aerial vehicles, US patent, 2014, led.</li>
+        <li>(P04) Omnidirectional Spherical Blimp, International patent, 2012, led.</li>
+        <li>(P03) Robotic Textures, US patent, 2012, led.</li>
+        <li>(P02) Display with robotic pixels - divisorial, US patent, 2011, led.</li>
+        <li>(P01) Display with robotic pixels, US patent 8723872.</li>
+    </ul>
+</div>
+
+<!-- Basic searching over the fields in the publication items -->
+<script>
+    document.getElementById('search-button').addEventListener('click', function () {
+        var searchValue = document.getElementById('search-input').value.toLowerCase();
+        var publicationItems = document.getElementsByClassName('publication-item');
+        // var yearDividers = document.getElementsByClassName('archive-year');
+
+        for (var i = 0; i < publicationItems.length; i++) {
+            var publicationTitle = publicationItems[i].querySelector('.publication-title').textContent.toLowerCase();
+            var publicationAuthor = publicationItems[i].querySelector('.author-names').textContent.toLowerCase();
+            var publicationVenue = publicationItems[i].querySelector('.publication-venue').textContent.toLowerCase();
+            var publicationYear = publicationItems[i].querySelector('.publication-date').textContent.toLowerCase();
+
+            if (publicationTitle.includes(searchValue) || publicationAuthor.includes(searchValue) || publicationVenue.includes(searchValue) || publicationYear.includes(searchValue)) {
+                publicationItems[i].style.display = 'block';
+            } else {
+                publicationItems[i].style.display = 'none';
+            }
+        }
+    });
+</script>
