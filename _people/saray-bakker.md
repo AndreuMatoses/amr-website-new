@@ -2,7 +2,6 @@
 name: Saray Bakker
 title: PhD Candidate # The title that shows below your name.
 type: phd-candidate # post-doc, phd-visitor, professor, engineer
-is_past_member: false
 joined_date: 2022-06-01
 # left_date: 2023-09-30 # Optional, if you add a left date the member will be moved to the past members section
 # now_at: Assistant Professor at Cool Uni # Add this for extra info for past members
