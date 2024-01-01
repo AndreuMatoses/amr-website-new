@@ -39,7 +39,7 @@ permalink: /publications/
     {% assign date = currDate %} 
     {% endif %}
 
-    <!-- Counting for each type journal, conference, workshop, other -->
+    <!-- Counting for each type journal, conference, workshop, thesis, other -->
     {% assign counter = counter | minus: 1 %}
     {% if publication.type == "journal" %}
         {% capture counter_to_show %}J{{ j_counter }}{% endcapture %}
@@ -58,7 +58,7 @@ permalink: /publications/
         {% assign o_counter = o_counter | minus: 1 %}
     {% endif %}
 
-    <!-- Add the publication item -->
+    <!-- Add the publication item. id is unique for the abstract collapse callback. show_id is the thing to show before the title -->
     <div class="publication-item">
         {% include publication_item.html publication=publication id=counter show_id=counter_to_show %}
     </div>
@@ -69,16 +69,18 @@ permalink: /publications/
 
 <div class="patents">
     <h1>Patents</h1>
-    <ul class="patents-list">
-        <li>(P07) Compact omnidirectional vision sensor, US patent, 2014, led.</li>
-        <li>(P06) Shared control of autonomous vehicles, US patent, 2014, led.</li>
-        <li>(P05) Automated charging for aerial vehicles, US patent, 2014, led.</li>
-        <li>(P04) Omnidirectional Spherical Blimp, International patent, 2012, led.</li>
-        <li>(P03) Robotic Textures, US patent, 2012, led.</li>
-        <li>(P02) Display with robotic pixels - divisorial, US patent, 2011, led.</li>
-        <li>(P01) Display with robotic pixels, US patent 8723872.</li>
-    </ul>
+    <div class="patents-list">
+        <span class="amr-color fw-bold">P07. </span><span>Compact omnidirectional vision sensor, US patent, 2014, led.</span><br>
+        <span class="amr-color fw-bold">P06. </span><span> Shared control of autonomous vehicles, US patent, 2014, led.</span><br>
+        <span class="amr-color fw-bold">P05. </span><span> Automated charging for aerial vehicles, US patent, 2014, led.</span><br>
+        <span class="amr-color fw-bold">P04. </span><span> Omnidirectional Spherical Blimp, International patent, 2012, led.</span><br>
+        <span class="amr-color fw-bold">P03. </span><span> Robotic Textures, US patent, 2012, led.</span><br>
+        <span class="amr-color fw-bold">P02. </span><span> Display with robotic pixels - divisorial, US patent, 2011, led.</span><br>
+        <span class="amr-color fw-bold">P01. </span><span> Display with robotic pixels, US patent 8723872.</span><br>
+    </div>
 </div>
+
+<!-- Search script. Just manages the visibility of the publications items depending on the search. probably very inefficient but works directly with the html  -->
 <script>
     var searchInput = document.getElementById('search-input');
     var searchButton = document.getElementById('search-button');

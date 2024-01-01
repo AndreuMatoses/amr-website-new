@@ -14,7 +14,7 @@ links: # If you have a website for the project, repos, etc. put it here.
 fundings: 
 people: # If you put your name in the same way you have it in your _people entry, your preferred link will be added. extra_info is optional.
     - name: Lasse Peters 
-      # extra_info: 
+      # extra_info: website here?
     - name: Prof. Laura Ferranti
       # extra_info: Reliable Control (R2C) Lab TU Delft
     - name: Prof. Javier Alonso-Mora

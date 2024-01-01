@@ -1,5 +1,29 @@
 [
     {
+        "title": "Learning scalable and efficient communication policies for multi-robot collision avoidance",
+        "authors": [
+            "Álvaro Serra-Gómez",
+            "Hai Zhu",
+            "Bruno Brito",
+            "Wendelin Böhmer",
+            "Javier Alonso-Mora"
+        ],
+        "date": "2023-08-19",
+        "type": "journal",
+        "venue": " Autonomous Robots 47, 1275-1297",
+        "links": [
+            {
+                "web": "https://link.springer.com/article/10.1007/s10514-023-10127-3"
+            },
+            {
+                "PDF": "/assets/files/publications/23-serra-auro.pdf"
+            }
+        ],
+        "note": null,
+        "belongs_to_projects": ["scene-reasoning-team"],
+        "abstract": "Decentralized multi-robot systems typically perform coordinated motion planning by constantly broadcasting their intentions to avoid collisions. However, the risk of collision between robots varies as they move and communication may not always be needed. This paper presents an efficient communication method that addresses the problem of “when” and “with whom” to communicate in multi-robot collision avoidance scenarios. In this approach, each robot learns to reason about other robots’ states and considers the risk of future collisions before asking for the trajectory plans of other robots. We introduce a new neural architecture for the learned communication policy which allows our method to be scalable. We evaluate and verify the proposed communication strategy in simulation with up to twelve quadrotors, and present results on the zero-shot generalization/robustness capabilities of the policy in different scenarios. We demonstrate that our policy (learned in a simulated environment) can be successfully transferred to real robots."
+    },
+    {
         "title": "Online flash delivery from multiple depots",
         "authors": [
             "M. Kronmuller",
@@ -18,7 +42,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["airlab-ondemand"],
         "abstract": "Abstract: We study routing for on-demand last-mile logistics with two crucial novel features: i) Multiple depots, optimizing where to pick-up every order, ii) Allowing vehicles to perform depot returns prior to being empty, thus adapting their routes to include new orders online. Both features result in shorter distances and more agile planning.We propose a scalable dynamic method to deliver orders as fast as possible. Following a rolling horizon approach, each time step the following is executed. First, define potential pick-up locations and identify which groups of orders can be transported together, with which vehicle and following which route. Then, decide which of these potential groups of orders will be executed and by which vehicle by solving an integer linear program. We simulate one day of service in Amsterdam that considers 10,000 requests, compare results to several strategies and test different scenarios. Results underpin the advantages of the proposed method."
     },
     {
@@ -61,7 +85,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: We study the problem of deploying a fleet of mobile robots to service tasks that arrive stochastically over time and at random locations in an environment. This is known as the Dynamic Vehicle Routing Problem (DVRP) and requires robots to allocate incoming tasks among themselves and find an optimal sequence for each robot. State-of-the-art approaches only consider average wait times and focus on high-load scenarios where the arrival rate of tasks approaches the limit of what can be handled by the robots while keeping the queue of unserviced tasks bounded, i.e., stable. To ensure stability, these approaches repeatedly compute minimum distance tours over a set of newly arrived tasks. This letter is aimed at addressing the missing policies for moderate-load scenarios, where quality of service can be improved by prioritizing long-waiting tasks. We introduce a novel DVRP policy based on a cost function that takes the p-norm over accumulated wait times and show it guarantees stability even in high-load scenarios. We demonstrate that the proposed policy outperforms the state-of-the-art in both mean and 95th percentile wait times in moderate-load scenarios through simulation experiments in the Euclidean plane as well as using real-world data for city scale service requests."
     },
     {
@@ -87,7 +111,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["game-theoretic-mp"],
         "abstract": "Abstract: Robots deployed to the real world must be able to interact with other agents in their environment. Dynamic game theory provides a powerful mathematical framework for modeling scenarios in which agents have individual objectives and interactions evolve over time. However, a key limitation of such techniques is that they require a priori knowledge of all players\u2019 objectives. In this work, we address this issue by proposing a novel method for learning players\u2019 objectives in continuous dynamic games from noise-corrupted, partial state observations. Our approach learns objectives by coupling the estimation of unknown cost parameters of each player with inference of unobserved states and inputs through Nash equilibrium constraints. By coupling past state estimates with future state predictions, our approach is amenable to simultaneous online learning and prediction in receding horizon fashion. We demonstrate our method in several simulated traffic scenarios in which we recover players\u2019 preferences, for, e.g. desired travel speed and collision-avoidance behavior. Results show that our method reliably estimates game-theoretic models from noise-corrupted data that closely matches ground-truth objectives, consistently outperforming state-of-the-art approaches."
     },
     {
@@ -126,7 +150,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["scene-reasoning-team"],
         "abstract": "Abstract: WIn this paper, we consider the problem where a drone has to collect semantic information to classify multiple moving targets. In particular, we address the challenge of computing control inputs that move the drone to informative viewpoints, position and orientation, when the information is extracted using a \u201cblack-box\u201d classifier, e.g., a deep learning neural network. These algorithms typically lack of analytical relationships between the viewpoints and their associated out- puts, preventing their use in information-gathering schemes. To fill this gap, we propose a novel attention-based architecture, trained via Reinforcement Learning (RL), that outputs the next viewpoint for the drone favoring the acquisition of evidence from as many unclassified targets as possible while reasoning about their movement, orientation, and occlusions. Then, we use a low-level MPC controller to move the drone to the desired viewpoint taking into account its actual dynamics. We show that our approach not only outperforms a variety of baselines but also generalizes to scenarios unseen during training. Additionally, we show that the network scales to large numbers of targets and generalizes well to different movement dynamics of the targets."
     },
     {
@@ -171,7 +195,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["game-theoretic-mp"],
         "abstract": "Abstract: Many autonomous agents, such as intelligent ve- hicles, are inherently required to interact with one another. Game theory provides a natural mathematical tool for robot motion planning in such interactive settings. However, tractable algorithms for such problems usually rely on a strong assumption, namely that the objectives of all players in the scene are known. To make such tools applicable for ego-centric planning with only local information, we propose an adaptive model-predictive game solver, which jointly infers other players\u2019 objectives online and computes a corresponding generalized Nash equilibrium (GNE) strategy. The adaptivity of our approach is enabled by a differentiable trajectory game solver whose gradient signal is used for maximum likelihood estimation (MLE) of opponents\u2019 objectives. This differentiability of our pipeline facilitates direct integration with other differentiable elements, such as neural networks (NNs). Furthermore, in contrast to existing solvers for cost inference in games, our method handles not only partial state observations but also general inequality constraints. In two simulated traffic scenarios, we find superior performance of our approach over both existing game-theoretic methods and non- game-theoretic model-predictive control (MPC) approaches. We also demonstrate our approach\u2019s real-time planning capabilities and robustness in two-player hardware experiments."
     },
     {
@@ -193,7 +217,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects":  ["airlab-manipulation"],
         "abstract": "Abstract: Optimization fabrics are a geometric approach to real-time local motion generation, where motions are designed by the composition of several differential equations that exhibit a desired motion behavior. We generalize this framework to dynamic scenarios and nonholonomic robots and prove that fundamental properties can be conserved. We show that convergence to desired trajectories and avoidance of moving obstacles can be guaranteed using simple construction rules of the components. In addition, we present the first quantitative comparisons between optimization fabrics and model predictive control and show that optimization fabrics can generate similar trajectories with better scalability, and thus, much higher replanning frequency (up to 500 Hz with a 7 de- grees of freedom robotic arm). Finally, we present empirical results on several robots, including a nonholonomic mobile manipulator with 10 degrees of freedom and avoidance of a moving human, supporting the theoretical findings."
     },
     {
@@ -241,7 +265,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["trilogy"],
         "abstract": "Abstract: Motion planning for autonomous robots in tight, interaction-rich, and mixed human-robot environments is challenging. State-of-the-art methods typically separate prediction and planning, predicting other agents' trajectories first and then planning the ego agent's motion in the remaining free space. However, agents' lack of awareness of their influence on others can lead to the freezing robot problem. We build upon Interaction-Aware Model Predictive Path Integral (IA-MPPI) control and combine it with learning-based trajectory predictions, thereby relaxing its reliance on communicated short-term goals for other agents. We apply this framework to Autonomous Surface Vessels (ASVs) navigating urban canals. By generating an artificial dataset in real sections of Amsterdam's canals, adapting and training a prediction model for our domain, and proposing heuristics to extract local goals, we enable effective cooperation in planning. Our approach improves autonomous robot navigation in complex, crowded environments, with potential implications for multi-agent systems and human-robot interaction."
     },
     {
@@ -286,7 +310,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony","interact"],
         "abstract": "Abstract: In this paper, we address the problem of real-time motion planning for multiple robotic manipulators that operate in close proximity. We build upon the concept of dynamic fabrics and extend them to multi-robot systems, referred to as Multi-Robot Dynamic Fabrics (MRDF). This geometric method enables a very high planning frequency for high-dimensional systems at the expense of being reactive and prone to deadlocks. To detect and resolve deadlocks, we propose Rollout Fabrics where MRDF are forward simulated in a decentralized manner. We validate the methods in simulated close-proximity pick-and-place scenarios with multiple manipulators, showing high success rates and real-time performance."
     },
     {
@@ -370,7 +394,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["airlab-manipulation"],
         "abstract": "Abstract: In this paper, we present an automated parameter optimization method for trajectory generation. We formulate parameter optimization as a constrained optimization problem that can be effectively solved using Bayesian optimization. While the approach is generic to any trajectory generation method, we showcase it using optimization fabrics. Optimiza- tion fabrics are a geometric trajectory generation method based on non-Riemannian geometry. By symbolically pre-solving the structure of the tree of fabrics, we obtain a parameterized trajectory generator, called symbolic fabrics. We show that autotuned symbolic fabrics reach expert-level performance in a few trials. Additionally, we show that tuning transfers across different robots, motion planning problems and between sim- ulation and real world. Finally, we qualitatively showcase that the framework could be used for coupled mobile manipulation."
     },
     {
@@ -435,7 +459,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["trilogy"],
         "abstract": "Abstract: Autonomous vehicles that operate in urban envi- ronments shall comply with existing rules and reason about the interactions with other decision-making agents. In this paper, we introduce a decentralized and communication-free interaction-aware motion planner and apply it to Autonomous Surface Vessels (ASVs) in urban canals. We build upon a sampling-based method, namely Model Predictive Path Integral control (MPPI), and employ it to, in each time instance, compute both a collision-free trajectory for the vehicle and a prediction of other agents\u2019 trajectories, thus modeling inter- actions. To improve the method\u2019s efficiency in multi-agent sce- narios, we introduce a two-stage sample evaluation strategy and define an appropriate cost function to achieve rule compliance. We evaluate this decentralized approach in simulations with multiple vessels in real scenarios extracted from Amsterdam\u2019s canals, showing superior performance than a state-of-the- art trajectory optimization framework and robustness when encountering different types of agents."
     },
     {
@@ -462,7 +486,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["trilogy"],
         "abstract": "Abstract: We present a method for solving finite horizon optimal control problems using a generic physics simulator as the dynamical model. In particular, we present an open-source implementation of a model predictive path integral controller (MPPI), that uses the GPU-parallelizable IsaacGym simulator as the dynamical model to compute the forward dynamics of the system. This allows one to effortlessly solve complex contact-rich tasks such as for example, non-prehensile manipulation of a variety of objects, or picking with a mobile manipulator. Since there is no explicit dynamic modeling required from a user, the repository is easily extendable to different objects and robots, as we show in the experiments section. This makes this method a powerful and accessible tool to solve a large variety of contact-rich tasks."
     },
     {
@@ -562,7 +586,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["airlab-ondemand", "harmony"],
         "abstract": "Abstract: This paper studies the multi-robot task assignment problem in which a fleet of dispersed robots needs to efficiently transport a set of dynamically appearing packages from their initial locations to corresponding destinations within prescribed time-windows. Each robot can carry multiple packages simultaneously within its capacity. Given a sufficiently large robot fleet, the objective is to minimize the robots' total travel time to transport the packages within their respective time-window constraints. The problem is shown to be NP-hard, and we design two group-based distributed auction algorithms to solve this task assignment problem. Guided by the auction algorithms, robots first distributively calculate feasible package groups that they can serve, and then communicate to find an assignment of package groups. We quantify the potential of the algorithms with respect to the number of employed robots and the capacity of the robots by considering the robots' total travel time to transport all packages. Simulation results show that the designed algorithms are competitive compared with an exact centralized Integer Linear Program representation solved with the commercial solver Gurobi, and superior to popular greedy algorithms and a heuristic distributed task allocation method."
     },
     {
@@ -662,7 +686,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: Autonomous mobile robots require accurate human motion predictions to safely and efficiently navigate among pedestrians, whose behavior may adapt to environmental changes. This letter introduces a self-supervised continual learning framework to improve data-driven pedestrian prediction models online across various scenarios continuously. In particular, we exploit online streams of pedestrian data, commonly available from the robot\u2019s detection and tracking pipeline, to refine the prediction model and its performance in unseen scenarios. To avoid the forgetting of previously learned concepts, a problem known as catastrophic forgetting, our framework includes a regularization loss to penalize changes of model parameters that are important for previous scenarios and retrains on a set of previous examples to retain past knowledge. Experimental results on real and simulation data show that our approach can improve prediction performance in unseen scenarios while retaining knowledge from seen scenarios when compared to naively training the prediction model online."
     },
     {
@@ -708,7 +732,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: Reward learning is a highly active area of research in human-robot interaction (HRI), allowing a broad range of users to specify complex robot be- haviour. Experiments with simulated user input play a major role in the devel- opment and evaluation of reward learning algorithms due to the availability of a ground truth. In this paper, we review measures for evaluating reward learning algorithms used in HRI, most of which fall into two classes. In a theoretical worst case analysis and several examples, we show that both classes of measures can fail to effectively indicate how good the learned robot behaviour is. Thus, our work contributes to the characterization of sim-to-real gaps of reward learning in HRI."
     },
     {
@@ -749,7 +773,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: In this paper we study the multi-robot task assignment problem with tasks that appear online and need to be serviced within a fixed time window in an uncertain environment. For example, when deployed in dynamic, human centered environments, the team of robots may not have perfect information about the environment. Parts of the environment may temporarily become blocked and blockages may only be observed on location. While numerous variants of the Canadian Traveler Problem describe the path planning aspect of this problem, few work has been done on multi-robot task allocation (MRTA) under this type of uncertainty. In this paper, we introduce and theoretically analyze the problem of MRTA with recoverable online blockages. Based on a stochastic blockage model, we compute offline tours using the expected travel costs for the online routing problem. The cost of the offline tours is used in a greedy task assignment algorithm. In simulation experiments we highlight the performance benefits of the proposed method under various settings."
     },
     {
@@ -771,7 +795,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects":  ["airlab-ondemand"],
         "abstract": "Abstract: This paper presents a novel approach to route heterogeneous fleets for flash delivery operations. Flash deliveries offer to serve customers\u2019 wishes in minutes. We investigate a scenario that allows to pick up orders at multiple depots with a heterogeneous vehicle fleet leveraging different modes of transportation. We propose the Heterogeneous Vehicle Group Assignment (HVGA) method, which, given a problem state, identifies potential pick-up locations, calculates potential trips for all modes of transportation and last chooses from the set of potential trips. Experiments to analyze the proposed method are executed using a fleet featuring two modes of transportation, trucks and drones. We compare to a state-of-the-art method. Results show that HVGA is able to serve more orders while requiring less total traveled distance. Further, the effects of the fleet size and fleet composition between drones and trucks are examined by simulating three hours of a flash delivery operation in the city center of Amsterdam."
     },
     {
@@ -795,7 +819,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: Many problems in robotics seek to simultaneously optimize several competing objectives under constraints. A conventional approach to solving such multi-objective optimization problems is to create a single cost function comprised of the weighted sum of the individual objectives. Solutions to this scalarized optimization problem are Pareto optimal solutions to the original multi-objective problem. However, finding an accurate representation of a Pareto front remains an important challenge. Using uniformly spaced weight vectors is often inefficient and does not provide error bounds. Thus, we address the problem of computing a finite set of weight vectors such that for any other weight vector, there exists an element in the set whose error compared to optimal is minimized. To this end, we prove fundamental properties of the optimal cost as a function of the weight vector, including its continuity and concavity. Using these, we propose an algorithm that greedily adds the weight vector least-represented by the current set, and provide bounds on the error. Finally, we illustrate that the proposed approach significantly outperforms uniformly distributed weights for different robot planning problems with varying numbers of objective functions."
     },
     {
@@ -846,7 +870,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["trilogy"],
         "abstract": "Abstract: In unstructured urban canals, regulation-aware interactions with other vessels are essential for collision avoidance and social compliance. In this paper, we propose a regulations aware motion planning framework for Autonomous Surface Vessels (ASVs) that accounts for dynamic and static obstacles. Our method builds upon local model predictive contouring control (LMPCC) to generate motion plans satisfying kino-dynamic and collision constraints in real-time while including regulation awareness. To incorporate regulations in the planning stage, we propose a cost function encouraging compliance with rules describing interactions with other vessels similar to COLlision avoidance REGulations at sea (COLREGs). These regulations are essential to make an ASV behave in a predictable and socially compliant manner with regard to other vessels. We compare the framework against baseline methods and show more effective regulation-compliance avoidance of moving obstacles with our motion planner. Additionally, we present experimental results in an outdoor environment."
     },
     {
@@ -874,7 +898,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["drones-emergency"],
         "abstract": "Abstract: Search missions require motion planning and navigation methods for information gathering that continuously replan based on new observations of the robot's surroundings. Current methods for information gathering, such as Monte Carlo Tree Search, are capable of reasoning over long horizons, but they are computationally expensive. An alternative for fast online execution is to train, offline, an information gathering policy, which indirectly reasons about the information value of new observations. However, these policies lack safety guarantees and do not account for the robot dynamics. To overcome these limitations we train an information-aware policy via deep reinforcement learning, that guides a receding-horizon trajectory optimization planner. In particular, the policy continuously recommends a reference viewpoint to the local planner, such that the resulting dynamically feasible and collision-free trajectories lead to observations that maximize the information gain and reduce the uncertainty about the environment. In simulation tests in previously unseen environments, our method consistently outperforms greedy next-best-view policies and achieves competitive performance compared to Monte Carlo Tree Search, in terms of information gains and coverage time, with a reduction in execution time by three orders of magnitude."
     },
     {
@@ -901,7 +925,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["game-theoretic-mp"],
         "abstract": "Abstract: In multi-agent settings, game theory is a natural framework for describing the strategic interactions of agents whose objectives depend upon one another\u2019s behavior. Trajectory games capture these complex effects by design. In competitive settings, this makes them a more faithful interaction model than traditional \u201cpredict then plan\u201d approaches. However, current game-theoretic planning methods have important limitations. In this work, we propose two main contributions. First, we introduce an offline training phase which reduces the online computational burden of solving trajectory games. Second, we formulate a lifted game which allows players to optimize multiple candidate trajectories in unison and thereby construct more competitive \u201cmixed\u201d strategies. We validate our approach on a number of experiments using the pursuit-evasion game \u201ctag.\u201d"
     },
     {
@@ -948,7 +972,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Emerging on-demand sharing alternatives, in which one resource is utilised simultaneously by a circumstantial group of users, entail several challenges regarding how to coordinate such users. A very relevant case refers to how to form groups in a mobility system that offers shared rides, and how to split the costs within the travellers of a group. These are non-trivial tasks, as two objectives conflict: 1) minimising the total costs of the system, and 2) finding an equilibrium where each user is content with her assignment. Aligning both objectives is challenging, as users are not aware of the externalities induced to the rest. In this paper, we propose protocols to share the costs within a ride so that optimal solutions can also constitute equilibria. To do this, we model the situation as a non-cooperative game, which can be seen as a game-version of the well-known set cover problem. We show that the traditional notions of equilibrium in game theory (Nash and Strong) are not useful here, and prove that determining whether a Strong Equilibrium exists is an NP-Complete problem, by reducing it to the k-Exact-Cover problem. Hence, we propose three alternative equilibrium notions (stronger than Nash and weaker than Strong), depending on how users can coordinate. For each of these equilibrium notions, we propose a (possibly overcharging) cost-sharing protocol that yields the optimal solutions equilibria. Simulations for Amsterdam reveal that our protocols can achieve stable solutions that are close to the optimum, and that having a central coordinator can have a large impact."
     },
     {
@@ -970,7 +994,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects":  ["airlab-ondemand", "ridepooling"],
         "abstract": "Abstract: On-demand mobility systems in which passengers use the same vehicle simultaneously are a promising transport mode, yet difficult to control. One of the most relevant challenges relates to the spatial imbalances of the demand, which induce a mismatch between the position of the vehicles and the origins of the emerging requests. Most ridepooling models face this problem through rebalancing methods only, i.e., moving idle vehicles towards areas with high rejections rate, which is done independently from routing and vehicle-to-orders assignments, so that vehicles serving passengers (a large portion of the total fleet) remain unaffected. This paper introduces two types of techniques for anticipatory routing that affect how vehicles are assigned to users and how to route vehicles to serve such users, so that the whole operation of the system is modified to reach more efficient states for future requests. Both techniques do not require any assumption or exogenous knowledge about the future demand, as they depend only on current and recent requests. Firstly, we introduce rewards that reduce the cost of an assignment between a vehicle and a group of passengers if the vehicle gets routed towards a high-demand zone. Secondly, we include a small set of artificial requests, whose request times are in the near future and whose origins are sampled from a probability distribution that mimics observed generation rates. These artificial requests are to be assigned together with the real requests. We propose, formally discuss and experimentally evaluate several formulations for both approaches. We test these techniques in combination with a state-of-the-art trip-vehicle assignment method, using a set of real rides from Manhattan. Introducing rewards can diminish the rejection rate to about nine-tenths of its original value. On the other hand, including future requests can reduce users\u2019 traveling times by about one-fifth, but increasing rejections. Both methods increase the vehicles-hour-traveled by about 10%. Spatial analysis reveals that vehicles are indeed moved towards the most demanded areas, such that the reduction in rejections rate is achieved mostly there."
     },
     {
@@ -1019,7 +1043,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Multi-agent Pickup and Delivery (MAPD) is a challenging industrial problem where a team of robots is tasked with transporting a set of tasks, each from an initial location and each to a specified target location. Appearing in the context of automated warehouse logistics and automated mail sortation, MAPD requires first deciding which robot is assigned what task (i.e., Task Assignment or TA) followed by a subsequent coordination problem where each robot must be assigned collision-free paths so as to successfully complete its assignment (i.e., Multi-Agent Path Finding or MAPF). Leading methods in this area solve MAPD sequentially: first assigning tasks, then assigning paths. In this work we propose a new coupled method where task assignment choices are informed by actual delivery costs instead of by lower-bound estimates. The main ingredients of our approach are a marginal-cost assignment heuristic and a meta-heuristic improvement strategy based on Large Neighbourhood Search. As a further contribution, we also consider a variant of the MAPD problem where each robot can carry multiple tasks instead of just one. Numerical simulations show that our approach yields efficient and timely solutions and we report significant improvement compared with other recent methods from the literature."
     },
     {
@@ -1045,7 +1069,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["harmony"],
         "abstract": "Abstract: Robotic navigation in environments shared with other robots or humans remains challenging because the intentions of the surrounding agents are not directly observable and the environment conditions are continuously changing. Local trajectory optimization methods, such as model predictive control (MPC), can deal with those changes but require global guidance, which is not trivial to obtain in crowded scenarios. This letter proposes to learn, via deep Reinforcement Learning (RL), an interaction-aware policy that provides long-term guidance to the local planner. In particular, in simulations with cooperative and non-cooperative agents, we train a deep network to recommend a subgoal for the MPC planner. The recommended subgoal is expected to help the robot in making progress towards its goal and accounts for the expected interaction with other agents. Based on the recommended subgoal, the MPC planner then optimizes the inputs for the robot satisfying its kinodynamic and collision avoidance constraints. Our approach is shown to substantially improve the navigation performance in terms of number of collisions as compared to prior MPC frameworks, and in terms of both travel time and number of collisions compared to deep RL methods in cooperative, competitive and mixed multiagent scenarios."
     },
     {
@@ -1098,7 +1122,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["safevru"],
         "abstract": "Abstract: We present an optimization-based method to plan the motion of an autonomous robot under the uncertainties associated with dynamic obstacles, such as humans. Our method bounds the marginal risk of collisions at each point in time by incorporating chance constraints into the planning problem. This problem is not suitable for online optimization outright for arbitrary probability distributions. Hence, we sample from these chance constraints using an uncertainty model, to generate \"scenarios\", which translate the probabilistic constraints into deterministic ones. In practice, each scenario represents the collision constraint for a dynamic obstacle at the location of the sample. The number of theoretically required scenarios can be very large. Nevertheless, by exploiting the geometry of the workspace, we show how to prune most scenarios before optimization and we demonstrate how the reduced scenarios can still provide probabilistic guarantees on the safety of the motion plan. Since our approach is scenario based, we are able to handle arbitrary uncertainty distributions. We apply our method in a Model Predictive Contouring Control framework and demonstrate its benefits in simulations and experiments with a moving robot platform navigating among pedestrians, running in real-time."
     },
     {
@@ -1123,7 +1147,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects":  ["airlab-ondemand"],
         "abstract": "Abstract: The advances in the area of autonomous delivery robots combined with customers' desire for fast delivery, bare potential for same-day delivery operations, specifically with small time windows between ordering and delivery. Most same-day deliveries are operated using a single depot and with vehicles' routes planned and fixed when leaving the depot. In this paper, we relax these two assumptions and focus on on-demand grocery delivery using a fleet of autonomous vehicles or robots. The problem features the opportunity to pick up goods at multiple local stores or depots, for example, supermarkets within the city, and allows robots to perform depot returns prior to being empty, if beneficial. This allows for more agile planning and on average shorter distance to the next depot. We propose a novel dynamic method for the same-day delivery problem, where we aim to deliver orders as fast as possible, minimally within the same day. In each time step (every few seconds or minutes) the following is executed: For each order potential pick-up locations are identified and feasible trips, i.e., sequences to pick up goods and deliver orders, are calculated. To assign trips to robots an integer-linear program is solved. We simulate one day of service in a city under different conditions with up to 30 autonomous robots, 30 depots and 10,500 orders. Results underpin the advantages of the proposed method and show its versatility with respect to different situations."
     },
     {
@@ -1169,7 +1193,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: On-demand ridepooling systems usually need to decide which requests to serve, when the number of vehicles is not enough to transport them all with waiting times that are acceptable by the users. When doing so, they tend to provide uneven service rates, concentrating rejections in some zones within the operation area. In this paper, we propose two techniques that modify the objective function governing the assignment of users to vehicles, to prioritize requests originated at zones that present a relatively large rejection rate. The goal is to diminish the Gini Index of the rejections' rate, which is a well established way to measure inequality in economics. We test these techniques over an artificial small network and a real-life case in Manhattan, and we show that they are able to reduce the Gini Index of the rejection rates. Moreover, the overall rejection rate can be simultaneously reduced, thanks to utilizing the vehicles more efficiently."
     },
     {
@@ -1221,7 +1245,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["airlab-manipulation"],
         "abstract": "Abstract: This paper presents a real-time method for whole-body trajectory optimization of mobile manipulators in simplified dynamic and unstructured environments. Current trajectory optimization methods typically use decoupling of the mobile base and the robotic arm, which reduces flexibility in motion, does not scale to unstructured environments, and does not consider the future evolution of the environment, which is crucial to avoid dynamic obstacles. Given a goal configuration, such as waypoints generated by a global path planner, we formulate a receding horizon trajectory optimization minimizing the distance-to-target while avoiding collisions with static and dynamic obstacles. The presented method unifies the control of a robotic arm and a non-holonomic base to allow coupled trajectory planning. For collision avoidance, we propose to compute three convex regions englobing the robot's major body parts (i.e., base, shoulder-link and wrist-link) and thus reducing and limiting the number of inequality constraints, regardless of the number of obstacles in the environment. Moreover, our approach incorporates predicted trajectory information to smoothly, and in advance, avoid dynamic obstacles. The presented results show that trajectory optimization for the coupled system can reduce the total execution time by 48% and that applying the convex region generation for individual links allows keeping the computational costs low, even for complex scenarios, enabling onboard implementation."
     },
     {
@@ -1292,11 +1316,11 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: On-demand systems in which several users can ride simultaneously the same vehicle have great potential to improve mobility while reducing congestion. Nevertheless, they have a significant drawback: the actual realization of a trip depends on the other users with whom it is shared, as they might impose extra detours that increase the waiting time and the total delay; even the chance of being rejected by the system depends on which travelers are using the system at the same time. In this paper we propose a general description of the sources of unreliability that emerge in ridesharing systems and we introduce several measures. The proposed measures are related to two sources of unreliability induced by how requests and vehicles are being assigned, namely how users\u2019 times change within a single trip and between different realizations of the same trip. We then analyze both sources using a state-of-the-art routing and assignment method, and a New York City test case. Regarding same trip unreliability, in our experiments for different fixed fleet compositions and when reassignment is not restricted, we find that more than one third of the requests that are not immediately rejected face some change, and the magnitude of these changes is relevant: when a user faces an increase in her waiting time, this extra time is comparable to the average waiting time of the whole system, and the same happens with total delay. Algorithmic changes to reduce this uncertainty induce a trade-off with respect to the overall quality of service. For instance, not allowing for reassignments may increase the number of rejected requests. Concerning the unreliability between different trips, we find that the same origin-destination request can be rejected or served depending on the state of the fleet. And when it is served the waiting times and total delay are rarely equal, which remains true for different fleet sizes. Furthermore, the largest variations are faced by trips beginning at high-demand areas."
     },
     {
-        "title": "\"If you are late, everyone is late: late passenger arrival and ride-pooling systems' performance\"",
+        "title": "If you are late, everyone is late: late passenger arrival and ride-pooling systems' performance",
         "authors": [
             "R. Kucharski",
             "A. Fielbaum",
@@ -1305,7 +1329,7 @@
         ],
         "date": "2020-10-01",
         "type": "journal",
-        "venue": ", Proceedings of Transportmetrica A: Transport Science",
+        "venue": "Proceedings of Transportmetrica A: Transport Science",
         "links": [
             {
                 "web": "https://www.tandfonline.com/doi/full/10.1080/23249935.2020.1829170"
@@ -1315,8 +1339,28 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Sharing rides in on-demand systems allow passengers to reduce their fares and service providers to increase revenue, though at the cost of adding uncertainty to the system. Notably, the uncertainty of ride-pooling systems stems not only from travel times but also from unique features of sharing, such as the dependency on other passengers' arrival time at their pick up points. In this work, we theoretically and experimentally analyse how late arrivals at pick up locations impact shared rides' performance. We find that the total delay is equally distributed among sharing passengers. However, delay composition gradually shifts from on-board delay only for the first passenger to waiting delay at the origin for the last passenger. Sadly, trips with more passengers are more adversely impacted. Strategic behaviour analysis reveals Nash equilibria that might emerge. We analyse the system-wide effects and find that when lateness increases passengers refrain from sharing and eventually opt-out."
+    },
+    {
+        "title": "Ride-Sharing Efficiency and Level of Service under Alternative Demand, Behavioral and Pricing Settings",
+        "authors": [
+            "A. de Ruijter",
+            "O. Cats",
+            "J. Alonso-Mora",
+            "S. Hoogendoorn"
+        ],
+        "date": "2020-09-01",
+        "type": "journal",
+        "venue": "Proceedings of Transportation Research Board Annual Meeting",
+        "links": [
+            {
+                "PDF": "/assets/files/publications/20-deRuijter-trb.pdf"
+            }
+        ],
+        "note": null,
+        "belongs_to_projects": ["ridepooling"],
+        "abstract": " Previous studies examining ride-sharing potential assumed that rides can be shared as long as the incurred delay does not exceed a certain threshold. Conversely, we formulate willingness to share as a compensatory cost function at the individual passenger level. The latter considers trade-offs between delays caused by detours, travel discomfort related to sharing a vehicle and a fare discount associated with a shared ride. Next to finding how these behavioral preferences and the offered discount structure affect the efficiency and level of service of ride-sharing services, the effect of directionality in demand is considered. A graph-based approach is applied to perform an efficient assignment of vehicles to requests. We test the model on an experiment representing an urban context. Our findings suggest that service performance is strongly dependent on users’ willingness to share and somewhat less strongly on users’ tolerance to delays. Implementation of a ride-sharing service is most successful when directionality in demand is low, while ride-specific discounts can be effective in maximizing societal benefits."
     },
     {
         "title": "Online Trajectory Planning and Control of a MAV Payload System in Dynamic Environments",
@@ -1327,7 +1371,7 @@
         ],
         "date": "2020-06-01",
         "type": "journal",
-        "venue": ", Proceedings of Springer Autonomous Robots",
+        "venue": "Proceedings of Springer Autonomous Robots",
         "links": [
             {
                 "web": "https://link.springer.com/article/10.1007/s10514-020-09919-8"
@@ -1354,7 +1398,7 @@
         ],
         "date": "2020-03-01",
         "type": "journal",
-        "venue": ", Proceedings of IEEE Transactions on Intelligent Vehicles (T-IV)",
+        "venue": "Proceedings of IEEE Transactions on Intelligent Vehicles (T-IV)",
         "links": [
             {
                 "web": "https://ieeexplore.ieee.org/document/8911227"
@@ -1420,7 +1464,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["scene-reasoning-team"],
         "abstract": "Abstract: Decentralized multi-robot systems typically perform coordinated motion planning by constantly broadcasting their intentions as a means to cope with the lack of a central system coordinating the efforts of all robots. Especially in complex dynamic environments, the coordination boost allowed by communication is critical to avoid collisions between cooperating robots. However, the risk of collision between a pair of robots fluctuates through their motion and communication is not always needed. Additionally, constant communication makes much of the still valuable information shared in previous time steps redundant. This paper presents an efficient communication method that solves the problem of \"when\" and with \"whom\" to communicate in multi-robot collision avoidance scenarios. In this approach, every robot learns to reason about other robots' states and considers the risk of future collisions before asking for the trajectory plans of other robots. We evaluate and verify the proposed communication strategy in simulation with four quadrotors and compare it with three baseline strategies: non-communicating, broadcasting and a distance-based method broadcasting information with quadrotors within a predefined distance."
     },
     {
@@ -1446,7 +1490,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects":  ["airlab-ondemand"],
         "abstract": "Abstract: In this paper we address the problem of same-day pick-up and delivery where a set of tasks are known a priori and a set of tasks are revealed during operation. The vehicle routes are precomputed based on the known and predicted requests and adjusted online as new requests are revealed. We propose a novel anticipatory insertion method which incorporates a set of predicted requests to beneficially adjust the routes of a fleet of vehicles in real-time. Requests are predicted based on historical data, which is clustered in advance. We exploit inherent patterns of the demand, which are captured by historical data and include them in a dynamic vehicle routing solver based on heuristics and adaptive large neighborhood search. The proposed method is evaluated using numerical simulations on a variety of real-world problems with up to 1655 requests per day. Their degree of dynamism ranges from 0.70 to 0.93. These instances represent dynamic multi-depot pickup and delivery problems with time windows. The method has shown to require less driven kilometers than comparable methods."
     },
     {
@@ -1494,7 +1538,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Previous studies examining ride-sharing potential assumed that rides can be shared as long as the incurred delay does not exceed a certain threshold. Conversely, we formulate willingness to share as a compensatory cost function at the individual passenger level. The latter considers trade-offs between delays caused by detours, travel discomfort related to sharing a vehicle and a fare discount associated with a shared ride. Next to finding how these behavioral preferences and the offered discount structure affect the efficiency and level of service of ride-sharing services, the effect of directionality in demand is considered. A graph-based approach is applied to perform an efficient assignment of vehicles to requests. We test the model on an experiment representing an urban context. Our findings suggest that service performance is strongly dependent on users\u2019 willingness to share and somewhat less strongly on users\u2019 tolerance to delays. Implementation of a ride-sharing service is most successful when directionality in demand is low, while ride-specific discounts can be effective in maximizing societal benefits."
     },
     {
@@ -1524,7 +1568,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["interact"],
         "abstract": "Abstract: We present a framework that integrates social psychology tools into controller design for autonomous vehicles. Our key insight utilizes Social Value Orientation (SVO), quantifying an agent\u2019s degree of selfishness or altruism, which allows us to better predict driver behavior. We model interactions between human and autonomous agents with game theory and the principle of best response. Our unified algorithm estimates driver SVOs and incorporates their predicted trajectories into the autonomous vehicle\u2019s control while respecting safety constraints. We study common-yet-difficult traffic scenarios: highway merging and unprotected left turns. Incorporating SVO reduces error in predictions by 25%, validated on 92 human driving merges. Furthermore, we find that merging drivers are more competitive than nonmerging drivers."
     },
     {
@@ -1649,7 +1693,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Mobility-on-demand (MoD) systems are revolutionizing urban transit with the introduction of ride-sharing. Such systems have the potential to reduce vehicle congestion and improve accessibility of a city's transportation infrastructure. Recently developed algorithms can compute routes for vehicles in real-time for a city-scale volume of requests while allowing vehicles to carry multiple passengers at the same time. However, these algorithms focus on optimizing the performance for a given fleet of vehicles and do not tell us how many vehicles are needed to service all the requests. In this paper, we present an offline method to optimize the vehicle distributions and fleet sizes on historical demand data for MoD systems that allow passengers to share vehicles. We present an algorithm to determine how many vehicles are needed, where they should be initialized, and how they should be routed to service all the travel demand for a given period of time. Evaluation using 23,529,740 historical taxi requests from one month in Manhattan shows that on average 2864 four passenger vehicles are needed to service all of the taxi demand in a day with an average added travel delay of 2.8 mins."
     },
     {
@@ -1707,10 +1751,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": [
-            "safevru",
-            "interact"
-        ],
+        "belongs_to_projects": null,
         "abstract": "Abstract: This paper presents our research platform Safe VRU for the interaction of self-driving vehicles with Vulnerable Road Users (VRUs, i.e., pedestrians and cyclists). The paper details the design (implemented with a modular structure within ROS) of the full stack of vehicle localization, environment perception, motion planning, and control, with emphasis on the environment perception and planning modules. The environment perception detects the VRUs using a stereo camera and predicts their paths with Dynamic Bayesian Networks (DBNs), which can account for switching dynamics. The motion planner is based on model predictive contouring control (MPCC) and takes into account vehicle dynamics, control objectives (e.g., desired speed), and perceived environment (i.e., the predicted VRU paths with behavioral uncertainties) over a certain time horizon. We present simulation and real-world results to illustrate the ability of our vehicle to plan and execute collision-free trajectories in the presence of VRUs."
     },
     {
@@ -1888,7 +1929,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: In densely populated-cities, the use of private cars for personal transportation is unsustainable, due to high parking and road capacity requirements. The mobility-on-demand systems have been proposed as an alternative to a private car. Such systems consist of a fleet of vehicles that the user of the system can hail for one-way point-to-point trips. These systems employ large-scale vehicle sharing, i.e., one vehicle can be used by several people during one day and consequently, the fleet size and the parking space requirements can be reduced, but, at the cost of a non-negligible increase in vehicles miles driven in the system. The miles driven in the system can be reduced by ridesharing, where several people traveling in a similar direction are matched and travel in one vehicle. We quantify the potential of ridesharing in a hypothetical mobility-on-demand system designed to serve all trips that are currently realized by private car in the city of Prague. Our results show that by employing a ridesharing strategy that guarantees travel time prolongation of no more than 10 minutes, the average occupancy of a vehicle will increase to 2.7 passengers. Consequently, the number of vehicle miles traveled will decrease to 35% of the amount in the MoD system without ridesharing and to 60% of the amount in the present state."
     },
     {
@@ -1911,7 +1952,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Recent developments in Mobility-on-Demand (MoD) systems have demonstrated the potential of road vehicles as an efficient mode of urban transportation Newly developed algorithms can compute vehicle routes in real-time for batches of requests and allow for multiple requests to share vehicles. These algorithms have primarily focused on optimally producing vehicle schedules to pick up and drop off requests. The redistribution of idle vehicles to areas of high demand, known as rebalancing, on the contrary has received little attention in the context of ride-sharing. In this paper, we present a method to rebalance idle vehicles in a ride-sharing enabled MoD fleet. This method consists of an algorithm to optimally partition the fleet operating area into rebalancing regions, an algorithm to determine a real-time demand estimate for every region using incoming requests, and an algorithm to optimize the assignment of idle vehicles to these rebalancing regions using an integer linear program. Evaluation with historical taxi data from Manhattan shows that we can service 99.8% of taxi requests in Manhattan using 3000 vehicles with an average waiting time of 57.4 seconds and an average in-car delay of 13.7 seconds. Moreover, we can achieve a higher service rate using 2000 vehicles than prior work achieved with 3000. Furthermore, with a fleet of 3000 vehicles, we reduce the average travel delay by 86%, the average waiting time by 37%, and the amount of ignored requests by 95% compared to earlier work at the expense of an increased distance travelled by the fleet."
     },
     {
@@ -1932,7 +1973,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Self-driving technology is expected to enable the realization of large-scale mobility-on-demand systems that employ massive ridesharing. The technology is being celebrated as a potential cure for urban congestion and others negative externalities of individual automobile transportation. In this paper, we quantify the potential of ridesharing with a fleet of autonomous vehicles by considering all possible trade-offs between the quality of service and operation cost of the system that can be achieved by sharing rides. We formulate a multi-objective fleet routing problem and present a solution technique that can compute Pareto-optimal fleet operation plans that achieve different trade- offs between the two objectives. Given a set of requests and a set of vehicles, our method can recover a trade-off curve that quantifies the potential of ridesharing with given fleet. We provide a formal optimality proof and demonstrate that the proposed method is scalable and able to compute such trade-off curves for instances with hundreds of vehicles and requests optimally. Such an analytical tool helps with systematic design of shared mobility system, in particular, it can be used to make principled decisions about the required fleet size."
     },
     {
@@ -2177,7 +2218,7 @@
             }
         ],
         "note": null,
-        "belongs_to_projects": null,
+        "belongs_to_projects": ["ridepooling"],
         "abstract": "Abstract: Ride-sharing, or carpooling, systems with autonomous vehicles will provide efficient and reliable urban mobility on demand. In this work we present a method for dynamic vehicle routing that leverages historical data to improve the performance of a network of self-driving taxis. In particular, we describe a constrained optimization method capable of assigning requests to autonomous vehicles in an informed way, to minimize the expected cost of serving both current and future travel requests. We allow several passengers with independent trips to share a vehicle and allow vehicles to pick additional passengers as they progress through their route. Based on historical data, we compute a probability distribution over future demand. Then, samples from the learned probability distribution are incorporated into a decoupled vehicle routing and passenger assignment method to take into account the predicted future demand. This method consists of three steps, namely pruning of feasible trips, assignment of trips to vehicles and rebalancing of idle vehicles. We show the benefits and trade-offs of this predictive approach in an experimental evaluation with over three million rides extracted from a dataset of taxi trips in New York City. Our method produces routes and assignments that, in expectation, reduce the travel and waiting times for passengers, with respect to a purely reactive approach. Besides the mobility on demand application, the method we present is general and could also be applied to other multi-task multi-vehicle assignment and routing problems."
     },
     {
@@ -2750,10 +2791,7 @@
             }
         ],
         "note": "Best Video Award 2nd Prize",
-        "belongs_to_projects": [
-            "safevru",
-            "game-theoretic-mp"
-        ],
+        "belongs_to_projects": null,
         "abstract": "Abstract: This work shows experimental results with three systems that take real-time user input to direct a robot swarm formed by tens of small robots. These are: real-time drawing, gesture based interaction with an RGB-D sensor and control via a hand-held tablet computer."
     },
     {

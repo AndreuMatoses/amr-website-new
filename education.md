@@ -1,7 +1,13 @@
 ---
-title: Courses
+title: Education and Teaching
 permalink: /education/
 ---
+
+Here you can find an overview of the courses that we teach at TU Delft. We also supervise BSc and MSc projects. If you are interested in joining our group, please see the information below.
+
+<hr>
+
+# Courses
 
 ## Courses Currently Taught
 - *Planning and Decision Making* (RO47005) at M.Sc. Robotics, TU Delft (Q2).

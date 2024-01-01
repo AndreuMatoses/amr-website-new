@@ -8,9 +8,9 @@ description: >- # >- this means to ignore newlines until next field. This is the
 image: /assets/images/projects/INTERACT_picture.jpg
 links: # If you have a website for the project, repos, etc. put it here.
     - name: Project Website
-      url: "https://andreumatoses.github.io/"
-    - name: Repository
-      url: "https://scholar.google.com/citations?user=JydqDdEAAAAJ&hl=en&inst=6173373803492361994&oi=ao"
+      url: "/"
+    - name: "Github: multi-agent fabrics"
+      url: "https://github.com/tud-amr/multi-robot-fabrics"
 fundings: This project is founded the ERC Starting Grant project "Intuitive Interaction for Humans among Robots (INTERACT)". 
 people: # If you put your name in the same way you have it in your _people entry, your preferred link will be added. extra_info is optional.
     - name: Saray Bakker 
@@ -20,7 +20,7 @@ people: # If you put your name in the same way you have it in your _people entry
     - name: Dr. Clarence Chen
       # extra_info: Intelligent Vehicles (IV) Group TU Delft
     - name: Prof. Javier Alonso-Mora
-      # extra_info: Autonomous Multi-Robot Lab (AMR) TU Delft
+      extra_info: Autonomous Multi-Robot Lab (AMR) TU Delft
     - name: Prof. Wendelin Bohmer 
       extra_info: Key collaborator.
 ---
@@ -30,3 +30,7 @@ people: # If you put your name in the same way you have it in your _people entry
 ## About the Project
 
 This project addresses the interaction of highly automated vehicles with vulnerable road users (VRU) such as pedestrians and cyclists, in the context of future urban mobility. The project pursues an integrated approach, covering the spectrum of VRU sensing, cooperative localization, behaviour modeling and intent recognition and vehicle control. Within the AMR group we focus on the vehicle control, enabling safe and efficient autonomous driving.
+
+## Partners
+
+Amsterdam Institute for Advanced Metropolitan Solutions (AMS). 
