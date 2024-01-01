@@ -3,17 +3,28 @@ title: Publications
 permalink: /publications/
 ---
 
+{% assign publications_sorted = site.data.publications | sort: 'year' %}
+
 <!-- We loop over the entries in the data/publications file and display the publications -->
 <div class="row justify-content-">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search publications: author, title, ..." id="search-input">
+        <input type="text" class="form-control w-auto" placeholder="Search publications: author, title, ..." id="search-input">
+        <select class="form-select" id="year-select" style="width: 50;">
+            <option value="">All Years</option>
+            {% for publication in publications_sorted %}
+                {% assign currDate = publication.date | date: "%Y" %} 
+                {% if currDate != date %}
+                    <option value="{{ currDate }}">{{ currDate }}</option>
+                    {% assign date = currDate %} 
+                {% endif %}
+            {% endfor %}
+        </select>
         <button class="btn btn-primary" type="button" id="search-button"><i class="bi bi-search"></i></button>
     </div>
 </div>
 
 <div class="publication-container" id="publication-container">
 
-    {% assign publications_sorted = site.data.publications | sort: 'year' | reverse %}
     {% for publication in publications_sorted %}
 
     {% assign currDate = publication.date | date: "%Y" %} 
@@ -22,30 +33,7 @@ permalink: /publications/
     {% assign date = currDate %} 
     {% endif %}
     <div class="publication-item">
-        <p>
-            <span class="fw-bold publication-title">{{ publication.title }}</span>
-            <br>
-            <span class="author-names">
-                {% for author in publication.authors %}
-                {% if forloop.last %}
-                {{ author }}.
-                {% else %}
-                {{ author }},
-                {% endif %}
-                {% endfor %}
-            </span>
-            <span class="text-body-secondary publication-venue"> In {{ publication.venue }}, </span>
-            <span class="text-body-secondary publication-date">{{ publication.date | date: "%Y" }}.</span>
-            {% if publication.links %}
-            <div class="d-flex justify-content-start mt-0 gap-2">
-            {% for link_hash in publication.links %}
-            {% for link in link_hash %}
-            <a href="{{ link[1] }}" target="_blank" class="btn btn-sm btn-light">{{ link[0] }}</a>
-            {% endfor %}
-            {% endfor %}
-            </div>
-            {% endif %}
-        </p>
+        {% include publication_item.html publication=publication %}
     </div>
     {% endfor %}
 
@@ -63,13 +51,22 @@ permalink: /publications/
         <li>(P01) Display with robotic pixels, US patent 8723872.</li>
     </ul>
 </div>
-
-<!-- Basic searching over the fields in the publication items -->
 <script>
-    document.getElementById('search-button').addEventListener('click', function () {
-        var searchValue = document.getElementById('search-input').value.toLowerCase();
+    var searchInput = document.getElementById('search-input');
+    var searchButton = document.getElementById('search-button');
+
+    // Trigger search when Enter key is pressed
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchButton.click();
+        }
+    });
+
+    searchButton.addEventListener('click', function () {
+        var searchValue = searchInput.value.toLowerCase();
+        var yearValue = document.getElementById('year-select').value;
         var publicationItems = document.getElementsByClassName('publication-item');
-        // var yearDividers = document.getElementsByClassName('archive-year');
+        var archiveYears = document.getElementsByClassName('archive-year');
 
         for (var i = 0; i < publicationItems.length; i++) {
             var publicationTitle = publicationItems[i].querySelector('.publication-title').textContent.toLowerCase();
@@ -77,10 +74,33 @@ permalink: /publications/
             var publicationVenue = publicationItems[i].querySelector('.publication-venue').textContent.toLowerCase();
             var publicationYear = publicationItems[i].querySelector('.publication-date').textContent.toLowerCase();
 
-            if (publicationTitle.includes(searchValue) || publicationAuthor.includes(searchValue) || publicationVenue.includes(searchValue) || publicationYear.includes(searchValue)) {
-                publicationItems[i].style.display = 'block';
+            if ((publicationTitle.includes(searchValue) || publicationAuthor.includes(searchValue) || publicationVenue.includes(searchValue) || publicationYear.includes(searchValue)) &&
+                (yearValue === "" || publicationYear.includes(yearValue))) {
+                publicationItems[i].style.display = "block";
             } else {
-                publicationItems[i].style.display = 'none';
+                publicationItems[i].style.display = "none";
+            }
+        }
+
+        for (var j = 0; j < archiveYears.length; j++) {
+            var year = archiveYears[j].textContent.trim();
+            // var yearItems = document.querySelectorAll('.publication-item .publication-date');
+            var yearItems = document.getElementsByClassName('publication-date');
+            console.log(year);
+            var showYear = false;
+            for (var k = 0; k < yearItems.length; k++) {
+                var itemYear = yearItems[k].textContent.trim();
+                console.log(itemYear);
+                if (itemYear.includes(year) && publicationItems[k].style.display !== "none") {
+                    showYear = true;
+                    break;
+                }
+            }
+
+            if (showYear) {
+                archiveYears[j].style.display = "block";
+            } else {
+                archiveYears[j].style.display = "none";
             }
         }
     });
