@@ -20,9 +20,9 @@
             {% if include.publication.links %}
         <div class="d-flex justify-content-start gap-2">
             {% if include.publication.abstract %}
-            <a class="btn btn-sm btn-light" data-bs-toggle="collapse" href="#collapseAbstract{{ forloop.index }}"
-                role="button" aria-expanded="false" aria-controls="collapseAbstract{{ forloop.index }}"><i
-                    class="bi bi-caret-right-fill"></i> Abstract</a>
+            <a class="btn btn-sm btn-light" data-bs-toggle="collapse" href="#collapseAbstract{{ include.id }}"
+                role="button" aria-expanded="false" aria-controls="collapseAbstract{{ include.id }}"><i
+                    class="bi bi-caret-right"></i> Abstract</a>
             {% endif %}
             {% for link_hash in include.publication.links %}
             {% for link in link_hash %}
@@ -33,7 +33,7 @@
             {% endfor %}
         </div>
         {% if include.publication.abstract %}
-        <div class="collapse mt-2" id="collapseAbstract{{ forloop.index }}">
+        <div class="collapse mt-2" id="collapseAbstract{{ include.id }}">
             <div class="card card-body text-bg-light">
                 {{ include.publication.abstract }}
             </div>

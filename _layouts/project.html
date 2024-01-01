@@ -51,7 +51,24 @@ layout: default
 
 <div class="publication-of-project">
   <h2>Related Publications</h2>
-  <p>TO DO: Generate Publications</p>
+  {% assign publications_sorted = site.data.publications | sort: 'year' %}
+  {% assign counter = 1 %}
+  {% for publication in publications_sorted %}
 
+  {% if publication.belongs_to_projects %}
+  {% for projects in publication.belongs_to_projects %}
+  {% for project in projects %}
+
+  {% if project == page.project_id %}
+  <div class="publication-item">
+      {% include publication_item.html publication=publication id=counter %}
+  </div>
+  {% endif %}
+
+  {% endfor %}
+  {% endfor %}
+  {% endif %}
+  {% assign counter = counter | plus: 1 %}
+  {% endfor %}
 
 </div>

@@ -24,17 +24,17 @@ permalink: /publications/
 </div>
 
 <div class="publication-container" id="publication-container">
-
+    {% assign counter = 1 %}
     {% for publication in publications_sorted %}
-
     {% assign currDate = publication.date | date: "%Y" %} 
     {% if currDate != date %}
     <h3 class="archive-year border-bottom">{{ currDate }}</h3>
     {% assign date = currDate %} 
     {% endif %}
     <div class="publication-item">
-        {% include publication_item.html publication=publication %}
+        {% include publication_item.html publication=publication id=counter %}
     </div>
+    {% assign counter = counter | plus: 1 %}
     {% endfor %}
 
 </div>
