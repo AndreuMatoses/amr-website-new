@@ -1,6 +1,10 @@
+
 <div class="d-flex mb-2">
     <div class="flex-grow-1 {% if include.publication.image %} me-2 {% endif %}">
         <p class="mb-1">
+            {% if include.show_id %}
+            <span class="fw-bold amr-color publication-id">{{ include.show_id }}. </span>
+            {% endif %}
             <span class="fw-bold publication-title">{{ include.publication.title }}</span>
             <br>
             <span class="author-names">
