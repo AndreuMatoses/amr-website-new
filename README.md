@@ -10,6 +10,20 @@ A new website for our Autonomous Multi-Robot Lab (AMR) at TU Delft. The webiste 
 
 > **Note:** The website is still under development. If you find any bugs or have any suggestions, please open an issue or submit a pull request.
 
+- [AMR Website Readme](#amr-website-readme)
+  - [How to add a new publication](#how-to-add-a-new-publication)
+  - [Adding a New Project](#adding-a-new-project)
+  - [Adding a New Person](#adding-a-new-person)
+  - [Adding a New Research Area](#adding-a-new-research-area)
+  - [Adding a New News Item](#adding-a-new-news-item)
+  - [Adding a New Robot](#adding-a-new-robot)
+  - [Adding a New MSc project](#adding-a-new-msc-project)
+  - [Adding to Vacancies or Education](#adding-to-vacancies-or-education)
+  - [(Rare) Adding a New Page](#rare-adding-a-new-page)
+  - [Some utilities](#some-utilities)
+    - [Linking local files and images in your content](#linking-local-files-and-images-in-your-content)
+
+
 ## How to add a new publication
 
 Each publication in the `_data/publications.json` file is represented as a JSON object. Juts add yours (at the top for example, they then order by date) and commit. It has the following fields:
