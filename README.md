@@ -38,7 +38,7 @@ Each publication in the `_data/publications.json` file is represented as a JSON 
 
 - `venue`: The venue where the publication was published (e.g., the name of a journal or conference). Do not put the year.
 
-- `links`: A dictionary, where each object represents a link related to the publication. Each link object should have a name (e.g., "web":, "PDF":) and the associated URL.
+- `links`: A dictionary, where each object represents a link related to the publication. Each link object should have a name (e.g., "web":, "PDF": ) and the associated URL.
 
 - `note`: Any additional notes about the publication (e.g. "Nominated for best bets paper award"). This field is optional. is added after the date in the publication entry.
 
