@@ -1,0 +1,34 @@
+---
+title: Our Robots and Installations
+permalink: /robots/
+---
+
+<h2>The Lab</h2>
+<p>
+    The new lab at CoR is located at the 1st floor of the Mechanical Engineering building at TU Delft. The lab is equipped with a Vicon motion capture system, a MxN m aerial and terrestrial robot arena, and a lot of robots.
+</p>
+<div class="lab-div mb-3 d-flex justify-content-center border border-primary">
+    <!-- <img src="{{ '/assets/images/lab.jpg' | relative_url}}" class="img-fluid" alt="lab"> -->
+    <img src="https://www.migmawei.ca/system/wp-content/uploads/2017/04/Placeholder_16_9-1.png" class="img-fluid" width="600" alt="lab">
+</div>
+<p>
+    Any other information about the lab.
+</p>
+
+<h2>Robots</h2>
+{% assign robots_sorted = site.robots | sort: 'type' %}
+<div class="robots-div mb-3">
+        {% for robot in robots_sorted %}
+
+        <!-- We create dividers for each type of robot -->
+        {% if robot.type != type %}
+        {% assign type = robot.type %}
+        <h3 class="text-capitalize">{{ type }}s</h3>
+        {% endif %}
+
+        <div class="robot-item">
+            {% include robot_vcard.html robot=robot %}
+        </div>
+        {% endfor %}
+    </div>
+</div>

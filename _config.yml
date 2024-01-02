@@ -39,6 +39,9 @@ collections:
   people:
     output: false
     permalink: /:collection/:name
+  robots:
+    output: false
+    permalink: /:collection/:name
   news:
     output: false
     permalink: /:collection/:name
