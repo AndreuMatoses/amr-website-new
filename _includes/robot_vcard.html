@@ -8,7 +8,7 @@
         <div class="mb-1 text-body-secondary small">
             {{ include.robot.subtitle }}
         </div>
-        <div class="mb-auto border border-primary">{{ include.robot.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+        <div class="mb-auto">{{ include.robot.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
         <!-- <a href="{{ include.robot.url | relative_url }}" class="icon-link gap-1 icon-link-hover stretched-link">
             Continue reading <i class="bi bi-chevron-right"></i>
         </a> -->
