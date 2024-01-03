@@ -1,6 +1,6 @@
 ---
+title: none
 permalink: /readme/
-layout: default
 ---
 
 # AMR Website Readme
