@@ -1,6 +1,6 @@
 ---
 name: Thijs Niesten
-title: PhD Candidate # The title that shows below your name.
+title: Research Engineer (Drones) # The title that shows below your name.
 type: engineer # phd-candidate, post-doc, phd-visitor, professor, engineer. These are used for filtering and grouping people.
 joined_date: 2022-03-01
 # left_date: 2023-09-30 # Optional, if you add a left date the member will be moved to the past members section

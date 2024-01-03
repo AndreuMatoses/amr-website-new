@@ -1,10 +1,11 @@
 ---
 permalink: /readme/
+layout: default
 ---
 
 # AMR Website Readme
 
-A new website for our Autonomous Multi-Robot Lab (AMR) at TU Delft. The webiste is built using Jekyll, [Boostrap 5 css](https://getbootstrap.com/docs/5.3/getting-started/introduction/) and hosted on GitHub Pages. It builds automatically when a commit is pushed to the `main` branch. **It takes around a minute minutes** to build and for the changes to be reflected on the website. 
+A new website for our Autonomous Multi-Robot Lab (AMR) at TU Delft. The webiste is built using Jekyll, [Boostrap 5 css](https://getbootstrap.com/docs/5.3/getting-started/introduction/) and hosted on GitHub Pages. It builds automatically when a commit is pushed to the `main` branch. **It takes some minutes** to build and for the changes to be reflected on the website. Check the build progress in actions (github repo).
 
 > **Note:** Any file for projects, etc... can be either .md, or .html, just choose the most convenient and maintain the same frontmatter.
 
@@ -42,6 +43,8 @@ Each publication in the `_data/publications.json` file is represented as a JSON 
 
 - `note`: Any additional notes about the publication (e.g. "Nominated for best bets paper award"). This field is optional. is added after the date in the publication entry.
 
+- `image`: (OPTIONAL) The path (or url) to an image file that represents the publication. This image is displayed on the publication's card on the website. **RECOMMENDED: The image should be square (same width and height)**. If you don't have an image, don't add this field.
+
 - `belongs_to_projects`: An array of strings, where each string is the id of a project that the publication is associated with. The publication will then display in that project's page. If the publication is not associated with any project, use "note": null. Project ids are defined in each `_projects/` entry. Currently: *"airlab-manipulation", "airlab-ondemand", "drones-emergency", "game-theoretic-mp", "ridepooling", "scene-reasoning-team", "safevru", "harmony", "interact", "trilogy".*
 
 - `abstract`: The abstract of the publication, as a long string.
@@ -71,6 +74,7 @@ Here's an example of what a publication object might look like:
                 "video": "https://www.youtube.com/watch?v=f0KJuCC1Xyo"
             }
         ],
+        "image": "/assets/images/publications/liu2022ral.png",
         "note": null,
         "belongs_to_projects": ["game-theoretic-mp", "interact"],
         "abstract": "Abstract: Many autonomous agents, such a..."
